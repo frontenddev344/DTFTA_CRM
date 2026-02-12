@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTFTA CRM - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-header-content">
+                    <h2>DTFTA CRM</h2>
+                    <p class="subtitle">Ops Dashboard</p>
+                </div>
+                <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">×</button>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item active">
+                    <span class="nav-icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="orders.html" class="nav-item">
+                    <span class="nav-icon">📦</span>
+                    <span>Orders / Jobs</span>
+                </a>
+                <a href="leads.html" class="nav-item">
+                    <span class="nav-icon">🧾</span>
+                    <span>Leads</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">🚚</span>
+                    <span>Shipping</span>
+                </a>
+                <a href="stores.html" class="nav-item">
+                    <span class="nav-icon">🏪</span>
+                    <span>Stores</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">📈</span>
+                    <span>Reports</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">A</div>
+                    <div class="user-details">
+                        <p class="user-name">Admin</p>
+                        <p class="user-role">Administrator</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Mobile Overlay -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="page-header">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <h1>Dashboard Overview</h1>
+                <div class="header-actions">
+                    <button class="btn-icon">🔔</button>
+                    <button class="btn-icon">⚙️</button>
+                </div>
+            </header>
+
+            <!-- Dashboard Cards -->
+            <div class="cards-grid">
+                <div class="card card-blue">
+                    <div class="card-icon">📋</div>
+                    <div class="card-content">
+                        <h3>Total Orders</h3>
+                        <p class="card-value">1,234</p>
+                        <p class="card-subtitle">Today: 45 | This Week: 312</p>
+                    </div>
+                </div>
+
+                <div class="card card-orange">
+                    <div class="card-icon">⏳</div>
+                    <div class="card-content">
+                        <h3>Pending Jobs</h3>
+                        <p class="card-value">89</p>
+                        <p class="card-subtitle">Requires attention</p>
+                    </div>
+                </div>
+
+                <div class="card card-purple">
+                    <div class="card-icon">🏭</div>
+                    <div class="card-content">
+                        <h3>In Production</h3>
+                        <p class="card-value">156</p>
+                        <p class="card-subtitle">Currently processing</p>
+                    </div>
+                </div>
+
+                <div class="card card-green">
+                    <div class="card-icon">✅</div>
+                    <div class="card-content">
+                        <h3>Shipped Orders</h3>
+                        <p class="card-value">987</p>
+                        <p class="card-subtitle">This month</p>
+                    </div>
+                </div>
+
+                <div class="card card-red">
+                    <div class="card-icon">⚠️</div>
+                    <div class="card-content">
+                        <h3>Exceptions</h3>
+                        <p class="card-value">23</p>
+                        <p class="card-subtitle">Artwork needed: 12</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>Orders Per Day</h3>
+                    <canvas id="ordersChart"></canvas>
+                </div>
+
+                <div class="chart-card">
+                    <h3>Orders Per Store</h3>
+                    <canvas id="storesChart"></canvas>
+                </div>
+
+                <div class="chart-card">
+                    <h3>Apparel vs DTF Jobs</h3>
+                    <canvas id="productTypeChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="activity-section">
+                <h2>Recent Activity</h2>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon status-new">N</div>
+                        <div class="activity-content">
+                            <p><strong>Job #1234</strong> - New order from Store ABC</p>
+                            <span class="activity-time">2 minutes ago</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon status-production">P</div>
+                        <div class="activity-content">
+                            <p><strong>Job #1230</strong> - Moved to production</p>
+                            <span class="activity-time">15 minutes ago</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon status-shipped">S</div>
+                        <div class="activity-content">
+                            <p><strong>Job #1225</strong> - Shipped successfully</p>
+                            <span class="activity-time">1 hour ago</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon status-exception">E</div>
+                        <div class="activity-content">
+                            <p><strong>Job #1220</strong> - Artwork needed</p>
+                            <span class="activity-time">2 hours ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

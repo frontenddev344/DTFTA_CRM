@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTFTA CRM - Stores</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-header-content">
+                    <h2>DTFTA CRM</h2>
+                    <p class="subtitle">Ops Dashboard</p>
+                </div>
+                <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">×</button>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="orders.html" class="nav-item">
+                    <span class="nav-icon">📦</span>
+                    <span>Orders / Jobs</span>
+                </a>
+                <a href="leads.html" class="nav-item">
+                    <span class="nav-icon">🧾</span>
+                    <span>Leads</span>
+                </a>
+                <a href="stores.html" class="nav-item active">
+                    <span class="nav-icon">🏪</span>
+                    <span>Stores</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">📈</span>
+                    <span>Reports</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">A</div>
+                    <div class="user-details">
+                        <p class="user-name">Admin</p>
+                        <p class="user-role">Administrator</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Mobile Overlay -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="page-header">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <h1>Stores</h1>
+                <div class="header-actions">
+                    <button class="btn-primary">+ New Store</button>
+                    <button class="btn-icon">🔔</button>
+                    <button class="btn-icon">⚙️</button>
+                </div>
+            </header>
+
+            <div class="filters-section">
+                <div class="filter-group">
+                    <label>Search</label>
+                    <input type="text" placeholder="Search stores..." class="filter-select">
+                </div>
+                <div class="filter-group">
+                    <label>Status</label>
+                    <select class="filter-select">
+                        <option>All</option>
+                        <option>Active</option>
+                        <option>Inactive</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Region</label>
+                    <select class="filter-select">
+                        <option>All Regions</option>
+                        <option>North</option>
+                        <option>South</option>
+                    </select>
+                </div>
+                <div style="flex:1"></div>
+                <button class="btn-secondary">Clear Filters</button>
+            </div>
+
+            <div class="table-container" style="margin-top:16px;">
+                <table class="jobs-table">
+                    <thead>
+                        <tr>
+                            <th class="checkbox-cell"><input type="checkbox" id="selectAllStores" aria-label="Select all stores"></th>
+                            <th>ID</th>
+                            <th>Store Name</th>
+                            <th>Owner</th>
+                            <th>Contact Email</th>
+                            <th>Location</th>
+                            <th>Status</th>
+                            <th>Created At</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="checkbox-cell"><input type="checkbox" class="row-checkbox" aria-label="Select store 1"></td>
+                            <td>1</td>
+                            <td>Store ABC</td>
+                            <td>Example</td>
+                            <td>example@store.com</td>
+                            <td>New York, USA</td>
+                            <td><span class="status-badge status-shipped">Active</span></td>
+                            <td>2024-01-10</td>
+                            <td><a href="#" class="btn-link">View</a></td>
+                        </tr>
+                        <tr>
+                            <td class="checkbox-cell"><input type="checkbox" class="row-checkbox" aria-label="Select store 2"></td>
+                            <td>2</td>
+                            <td>Store XYZ</td>
+                            <td>Custom Admin</td>
+                            <td>contact@xyz.com</td>
+                            <td>London, UK</td>
+                            <td><span class="status-badge status-cancelled">Inactive</span></td>
+                            <td>2024-02-15</td>
+                            <td><a href="#" class="btn-link">View</a></td>
+                        </tr>
+                        <tr>
+                            <td class="checkbox-cell"><input type="checkbox" class="row-checkbox" aria-label="Select store 3"></td>
+                            <td>3</td>
+                            <td>Store 123</td>
+                            <td>Sasha Calle</td>
+                            <td>sasha@store123.com</td>
+                            <td>Berlin, DE</td>
+                            <td><span class="status-badge status-new">Pending</span></td>
+                            <td>2024-03-01</td>
+                            <td><a href="#" class="btn-link">View</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination">
+                <button class="btn-pagination">Previous</button>
+                <span class="page-info">Page 1 of 1</span>
+                <button class="btn-pagination">Next</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

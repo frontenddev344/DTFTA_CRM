@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTFTA CRM - Orders / Jobs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-header-content">
+                    <h2>DTFTA CRM</h2>
+                    <p class="subtitle">Ops Dashboard</p>
+                </div>
+                <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">×</button>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="orders.html" class="nav-item active">
+                    <span class="nav-icon">📦</span>
+                    <span>Orders / Jobs</span>
+                </a>
+                <a href="leads.html" class="nav-item">
+                    <span class="nav-icon">🧾</span>
+                    <span>Leads</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">🚚</span>
+                    <span>Shipping</span>
+                </a>
+                <a href="stores.html" class="nav-item">
+                    <span class="nav-icon">🏪</span>
+                    <span>Stores</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">📈</span>
+                    <span>Reports</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">A</div>
+                    <div class="user-details">
+                        <p class="user-name">Admin</p>
+                        <p class="user-role">Administrator</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Mobile Overlay -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="page-header">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <h1>Orders / Jobs Management</h1>
+                <div class="header-actions">
+                    <button class="btn-primary">+ New Job</button>
+                    <button class="btn-icon">🔔</button>
+                    <button class="btn-icon">⚙️</button>
+                </div>
+            </header>
+
+            <!-- Filters Section -->
+            <div class="filters-section">
+                <div class="filter-group">
+                    <label>Status</label>
+                    <select id="filterStatus" class="filter-select">
+                        <option value="all">All Status</option>
+                        <option value="NEW">NEW</option>
+                        <option value="ARTWORK_NEEDED">ARTWORK_NEEDED</option>
+                        <option value="IN_PRODUCTION">IN_PRODUCTION</option>
+                        <option value="SHIPPED">SHIPPED</option>
+                        <option value="CANCELLED">CANCELLED</option>
+                        <option value="EXCEPTION">EXCEPTION</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Store</label>
+                    <select id="filterStore" class="filter-select">
+                        <option value="all">All Stores</option>
+                        <option value="Store ABC">Store ABC</option>
+                        <option value="Store XYZ">Store XYZ</option>
+                        <option value="Store 123">Store 123</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Product Type</label>
+                    <select id="filterProductType" class="filter-select">
+                        <option value="all">All Types</option>
+                        <option value="DTF">DTF</option>
+                        <option value="Apparel POD">Apparel POD</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Date</label>
+                    <input type="date" id="filterDate" class="filter-select">
+                </div>
+
+                <button class="btn-secondary" onclick="clearFilters()">Clear Filters</button>
+            </div>
+
+            <!-- Jobs Table -->
+            <div class="table-container">
+                <table class="jobs-table">
+                    <thead>
+                        <tr>
+                            <th>Job ID</th>
+                            <th>Store Name</th>
+                            <th>Order ID (Shopify)</th>
+                            <th>Product Type</th>
+                            <th>Garment</th>
+                            <th>Status</th>
+                            <th>Created At</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="jobsTableBody">
+                        <tr>
+                            <td>#1234</td>
+                            <td>Store ABC</td>
+                            <td>#5678</td>
+                            <td>DTF</td>
+                            <td>-</td>
+                            <td><span class="status-badge status-new">NEW</span></td>
+                            <td>2024-01-15 10:30</td>
+                            <td><a href="job-detail.html?id=1234&status=NEW" class="btn-link">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>#1233</td>
+                            <td>Store XYZ</td>
+                            <td>#5677</td>
+                            <td>Apparel POD</td>
+                            <td>Tee</td>
+                            <td><span class="status-badge status-artwork">ARTWORK_NEEDED</span></td>
+                            <td>2024-01-15 09:15</td>
+                            <td><a href="job-detail.html?id=1233&status=ARTWORK_NEEDED" class="btn-link">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>#1232</td>
+                            <td>Store 123</td>
+                            <td>#5676</td>
+                            <td>Apparel POD</td>
+                            <td>Hoodie</td>
+                            <td><span class="status-badge status-production">IN_PRODUCTION</span></td>
+                            <td>2024-01-15 08:00</td>
+                            <td><a href="job-detail.html?id=1232&status=IN_PRODUCTION" class="btn-link">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>#1231</td>
+                            <td>Store ABC</td>
+                            <td>#5675</td>
+                            <td>DTF</td>
+                            <td>-</td>
+                            <td><span class="status-badge status-shipped">SHIPPED</span></td>
+                            <td>2024-01-14 16:45</td>
+                            <td><a href="job-detail.html?id=1231&status=SHIPPED" class="btn-link">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>#1230</td>
+                            <td>Store XYZ</td>
+                            <td>#5674</td>
+                            <td>Apparel POD</td>
+                            <td>Tee</td>
+                            <td><span class="status-badge status-exception">EXCEPTION</span></td>
+                            <td>2024-01-14 14:20</td>
+                            <td><a href="job-detail.html?id=1230&status=EXCEPTION" class="btn-link">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>#1229</td>
+                            <td>Store 123</td>
+                            <td>#5673</td>
+                            <td>DTF</td>
+                            <td>-</td>
+                            <td><span class="status-badge status-cancelled">CANCELLED</span></td>
+                            <td>2024-01-14 12:10</td>
+                            <td><a href="job-detail.html?id=1229&status=CANCELLED" class="btn-link">View</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="btn-pagination">Previous</button>
+                <span class="page-info">Page 1 of 5</span>
+                <button class="btn-pagination">Next</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
