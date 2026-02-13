@@ -92,14 +92,14 @@
             <!-- Leads Board (kanban style) -->
             <div class="leads-board">
                 <!-- Column: New -->
-                <div class="lead-column">
+                <div class="lead-column" data-type="New">
                     <div class="lead-column-header">
                         <h3>New (4)</h3>
-                        <button class="btn-secondary">+</button>
+                        <button class="btn-secondary" onclick="openModal(this)">+</button>
                     </div>
                     <div class="lead-column-body">
                         <!-- Lead Card -->
-                        <div class="lead-card">
+                        <div class="lead-card" draggable="true">
                             <div class="lead-card-header">
                                 <div class="lead-card-info">
                                     <div class="lead-avatar avatar-blue">E</div>
@@ -116,8 +116,102 @@
                                 <span class="status-badge tag-green">$5,000</span>
                             </div>
                         </div>
-                        <!-- More cards... (static examples) -->
-                        <div class="lead-card">
+                      
+                        <div class="lead-card" draggable="true">
+                            <div class="lead-card-header">
+                                <div class="lead-card-info">
+                                    <div class="lead-avatar avatar-orange">SC</div>
+                                    <div>
+                                        <div class="lead-name">Sasha Calle</div>
+                                        <div class="lead-company">ShieldGuard Security</div>
+                                    </div>
+                                </div>
+                                <div class="lead-time">1 hour ago</div>
+                            </div>
+                            <div class="lead-description">Need Urgent Requirement of TaskMaster Pro</div>
+                            <div class="lead-tags">
+                                <span class="status-badge status-artwork">Requirement</span>
+                                <span class="status-badge tag-muted">Web Form</span>
+                            </div>
+                        </div>
+
+                        <div class="lead-card" draggable="true"draggable="true">
+                            <div class="lead-card-header">
+                                <div class="lead-card-info">
+                                    <div class="lead-avatar avatar-orange">SC</div>
+                                    <div>
+                                        <div class="lead-name">Sasha Calle</div>
+                                        <div class="lead-company">ShieldGuard Security</div>
+                                    </div>
+                                </div>
+                                <div class="lead-time">1 hour ago</div>
+                            </div>
+                            <div class="lead-description">Need Urgent Requirement of TaskMaster Pro</div>
+                            <div class="lead-tags">
+                                <span class="status-badge status-artwork">Requirement</span>
+                                <span class="status-badge tag-muted">Web Form</span>
+                            </div>
+                        </div>
+
+                        <div class="lead-card" draggable="true">
+                            <div class="lead-card-header">
+                                <div class="lead-card-info">
+                                    <div class="lead-avatar avatar-orange">SC</div>
+                                    <div>
+                                        <div class="lead-name">Sasha Calle</div>
+                                        <div class="lead-company">ShieldGuard Security</div>
+                                    </div>
+                                </div>
+                                <div class="lead-time">1 hour ago</div>
+                            </div>
+                            <div class="lead-description">Need Urgent Requirement of TaskMaster Pro</div>
+                            <div class="lead-tags">
+                                <span class="status-badge status-artwork">Requirement</span>
+                                <span class="status-badge tag-muted">Web Form</span>
+                            </div>
+                        </div>
+
+
+
+                        <div class="lead-card" draggable="true">
+                            <div class="lead-card-header">
+                                <div class="lead-card-info">
+                                    <div class="lead-avatar avatar-orange">SC</div>
+                                    <div>
+                                        <div class="lead-name">Sasha Calle</div>
+                                        <div class="lead-company">ShieldGuard Security</div>
+                                    </div>
+                                </div>
+                                <div class="lead-time">1 hour ago</div>
+                            </div>
+                            <div class="lead-description">Need Urgent Requirement of TaskMaster Pro</div>
+                            <div class="lead-tags">
+                                <span class="status-badge status-artwork">Requirement</span>
+                                <span class="status-badge tag-muted">Web Form</span>
+                            </div>
+                        </div>
+
+
+                        <div class="lead-card" draggable="true">
+                            <div class="lead-card-header">
+                                <div class="lead-card-info">
+                                    <div class="lead-avatar avatar-orange">SC</div>
+                                    <div>
+                                        <div class="lead-name">Sasha Calle</div>
+                                        <div class="lead-company">ShieldGuard Security</div>
+                                    </div>
+                                </div>
+                                <div class="lead-time">1 hour ago</div>
+                            </div>
+                            <div class="lead-description">Need Urgent Requirement of TaskMaster Pro</div>
+                            <div class="lead-tags">
+                                <span class="status-badge status-artwork">Requirement</span>
+                                <span class="status-badge tag-muted">Web Form</span>
+                            </div>
+                        </div>
+
+
+                        <div class="lead-card" draggable="true">
                             <div class="lead-card-header">
                                 <div class="lead-card-info">
                                     <div class="lead-avatar avatar-orange">SC</div>
@@ -138,13 +232,13 @@
                 </div>
 
                 <!-- Column: Follow Up -->
-                <div class="lead-column">
+                <div class="lead-column"  data-type="Follow Up">
                     <div class="lead-column-header">
                         <h3>Follow Up (4)</h3>
-                        <button class="btn-secondary">+</button>
+                        <button class="btn-secondary" onclick="openModal(this)">+</button>
                     </div>
                     <div class="lead-column-body">
-                        <div class="lead-card">
+                        <div class="lead-card" draggable="true">
                             <div class="lead-card-header">
                                 <div class="lead-card-info">
                                     <div class="lead-avatar avatar-green">EC</div>
@@ -165,13 +259,13 @@
                 </div>
 
                 <!-- Column: Prospect -->
-                <div class="lead-column">
+                <div class="lead-column" data-type="Prospect">
                     <div class="lead-column-header">
                         <h3>Prospect (3)</h3>
-                        <button class="btn-secondary">+</button>
+                        <button class="btn-secondary" onclick="openModal(this)">+</button>
                     </div>
                     <div class="lead-column-body">
-                        <div class="lead-card">
+                        <div class="lead-card" draggable="true">
                             <div class="lead-card-header">
                                 <div class="lead-card-info">
                                     <div class="lead-avatar avatar-purple">SC</div>
@@ -192,13 +286,13 @@
                 </div>
 
                 <!-- Column: Won -->
-                <div class="lead-column">
+                <div class="lead-column" data-type="Won">
                     <div class="lead-column-header">
                         <h3>Won (2)</h3>
-                        <button class="btn-secondary">+</button>
+                        <button class="btn-secondary" onclick="openModal(this)">+</button>
                     </div>
                     <div class="lead-column-body">
-                        <div class="lead-card">
+                        <div class="lead-card" draggable="true">
                             <div class="lead-card-header">
                                 <div class="lead-card-info">
                                     <div class="lead-avatar avatar-teal">WF</div>
@@ -221,7 +315,38 @@
         </main>
     </div>
 
-    <script src=\"script.js\"></script>
+    <div class="modal-overlay" id="addLeadModal">
+        <div class="modal">
+            <h3 id="modalTitle">Add New Lead</h3>
+      
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="leadName" placeholder="John Doe">
+          </div>
+      
+          <div class="form-group">
+            <label>Company</label>
+            <input type="text" id="leadCompany" placeholder="Company name">
+          </div>
+      
+          <div class="form-group">
+            <label>Description</label>
+            <textarea id="leadDesc" placeholder="Lead description"></textarea>
+          </div>
+      
+          <div class="form-group">
+            <label>Value</label>
+            <input type="number" id="leadValue" placeholder="5000">
+          </div>
+      
+          <div class="modal-actions">
+            <button class="btn-secondary" onclick="closeModal()">Cancel</button>
+            <button class="btn-primary" onclick="addLead()">Add Lead</button>
+          </div>
+        </div>
+      </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
 

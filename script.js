@@ -577,3 +577,152 @@ function initializeCounters() {
         requestAnimationFrame(step);
     });
 }
+
+
+
+
+// ===============================
+// Leads Modal + Kanban Drag Drop
+// ===============================
+
+let activeColumnBody = null;
+let draggedCard = null;
+
+/* ---------- MODAL ---------- */
+
+function openModal(btn) {
+    const column = btn.closest('.lead-column');
+    const type = column.getAttribute('data-type');
+
+    activeColumnBody = column.querySelector('.lead-column-body');
+
+    document.getElementById('modalTitle').innerText = `Add ${type} Lead`;
+    document.getElementById('addLeadModal').style.display = 'flex';
+}
+
+function closeModal() {
+    document.getElementById('addLeadModal').style.display = 'none';
+}
+
+function addLead() {
+    const name = document.getElementById('leadName').value.trim();
+    const company = document.getElementById('leadCompany').value.trim();
+    const desc = document.getElementById('leadDesc').value.trim();
+    const value = document.getElementById('leadValue').value;
+
+    if (!name || !company) {
+        alert("Name & Company required");
+        return;
+    }
+
+    const status = document.getElementById('modalTitle')
+        .innerText.replace('Add ', '')
+        .replace(' Lead', '');
+
+    const statusClassMap = {
+        "New": "status-new",
+        "Follow Up": "status-production",
+        "Prospect": "status-artwork",
+        "Won": "status-shipped"
+    };
+
+    const card = document.createElement('div');
+    card.className = 'lead-card';
+    card.innerHTML = `
+        <div class="lead-card-header">
+            <div class="lead-card-info">
+                <div class="lead-avatar avatar-blue">${name[0].toUpperCase()}</div>
+                <div>
+                    <div class="lead-name">${name}</div>
+                    <div class="lead-company">${company}</div>
+                </div>
+            </div>
+            <div class="lead-time">Just now</div>
+        </div>
+        <div class="lead-description">${desc}</div>
+        <div class="lead-tags">
+            <span class="status-badge ${statusClassMap[status]}">${status}</span>
+            ${value ? `<span class="status-badge tag-green">$${value}</span>` : ''}
+        </div>
+    `;
+
+    activeColumnBody.prepend(card);
+    makeCardDraggable(card);
+    closeModal();
+
+    // reset form
+    document.getElementById('leadName').value = '';
+    document.getElementById('leadCompany').value = '';
+    document.getElementById('leadDesc').value = '';
+    document.getElementById('leadValue').value = '';
+}
+
+/* ---------- DRAG & DROP ---------- */
+
+// Make existing cards draggable
+document.querySelectorAll('.lead-card').forEach(makeCardDraggable);
+
+function makeCardDraggable(card) {
+    card.setAttribute('draggable', 'true');
+
+    card.addEventListener('dragstart', () => {
+        draggedCard = card;
+        card.classList.add('dragging');
+    });
+
+    card.addEventListener('dragend', () => {
+        card.classList.remove('dragging');
+        draggedCard = null;
+    });
+}
+
+// Make columns droppable
+document.querySelectorAll('.lead-column-body').forEach(column => {
+    column.addEventListener('dragover', e => {
+        e.preventDefault();
+        column.classList.add('drag-over');
+    });
+
+    column.addEventListener('dragleave', () => {
+        column.classList.remove('drag-over');
+    });
+
+    column.addEventListener('drop', () => {
+        column.classList.remove('drag-over');
+        if (!draggedCard) return;
+
+        column.prepend(draggedCard);
+        updateCardStatus(draggedCard, column);
+    });
+});
+
+/* ---------- STATUS UPDATE ---------- */
+
+function updateCardStatus(card, columnBody) {
+    const column = columnBody.closest('.lead-column');
+    const newType = column.getAttribute('data-type');
+
+    const statusBadge = card.querySelector('.status-badge');
+
+    const statusClassMap = {
+        "New": "status-new",
+        "Follow Up": "status-production",
+        "Prospect": "status-artwork",
+        "Won": "status-shipped"
+    };
+
+    statusBadge.innerText = newType;
+    statusBadge.className = 'status-badge ' + statusClassMap[newType];
+}
+
+/* ---------- UX EXTRAS ---------- */
+
+// Close modal on outside click
+document.getElementById('addLeadModal').addEventListener('click', e => {
+    if (e.target.id === 'addLeadModal') closeModal();
+});
+
+// Close modal on ESC
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeModal();
+});
