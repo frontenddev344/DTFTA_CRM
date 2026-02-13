@@ -316,6 +316,7 @@ body {
     transition: all 0.3s ease;
     box-shadow: var(--shadow-sm);
     display: inline-block;
+    text-decoration: none;
 }
 
 .btn-primary:hover {
@@ -334,6 +335,8 @@ body {
     font-size: 14px;
     cursor: pointer;
     transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
 }
 
 .btn-secondary:hover {
