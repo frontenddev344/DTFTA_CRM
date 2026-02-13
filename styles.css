@@ -16,12 +16,12 @@
     --bg-tertiary: #334155;
     --bg-card: #1e293b;
     --bg-sidebar: #0a0e1a;
-    
+
     /* Text Colors */
     --text-primary: #ffffff;
     --text-secondary: #cbd5e1;
     --text-muted: #94a3b8;
-    
+
     /* Status Colors */
     --status-new: #3b82f6;
     --status-artwork: #f97316;
@@ -29,14 +29,14 @@
     --status-shipped: #10b981;
     --status-cancelled: #6b7280;
     --status-exception: #ef4444;
-    
+
     /* Accent Colors */
     --accent-blue: #3b82f6;
     --accent-orange: #f97316;
     --accent-purple: #a855f7;
     --accent-green: #10b981;
     --accent-red: #ef4444;
-    
+
     /* Border & Shadow */
     --border-color: #334155;
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -272,6 +272,7 @@ body {
 .menu-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(8px, -8px);
 }
+
 /* (menu-toggle hide on small screens moved to responsive.css) */
 
 .page-header h1 {
@@ -530,7 +531,12 @@ body {
 }
 
 /* Prevent media and tables from causing horizontal overflow */
-img, canvas, iframe, embed, object, table {
+img,
+canvas,
+iframe,
+embed,
+object,
+table {
     max-width: 100%;
     box-sizing: border-box;
 }
@@ -723,6 +729,7 @@ img, canvas, iframe, embed, object, table {
     vertical-align: middle;
     padding: 12px;
 }
+
 .checkbox-cell input[type=\"checkbox\"] {
     width: 18px;
     height: 18px;
@@ -942,7 +949,7 @@ img, canvas, iframe, embed, object, table {
     z-index: 1;
 }
 
-.stepper-step.completed + .stepper-line {
+.stepper-step.completed+.stepper-line {
     background-color: var(--status-shipped);
 }
 
@@ -1062,12 +1069,12 @@ img, canvas, iframe, embed, object, table {
 /* ============================================
    Leads board CSS
    ============================================ */
-   .leads-board {
+.leads-board {
     display: flex;
     gap: 20px;
     align-items: flex-start;
     margin-top: 16px;
-    height: calc(100vh - 250px); 
+    height: calc(100vh - 250px);
 }
 
 .lead-column {
@@ -1103,17 +1110,19 @@ img, canvas, iframe, embed, object, table {
     gap: 12px;
     overflow-y: auto;
     padding-right: 6px;
-    flex: 1;  
+    flex: 1;
 }
 
 
 .lead-column-body::-webkit-scrollbar {
     width: 6px;
 }
+
 .lead-column-body::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.15);
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 10px;
 }
+
 .lead-card {
     background-color: var(--bg-secondary);
     padding: 14px;
@@ -1146,30 +1155,48 @@ img, canvas, iframe, embed, object, table {
     flex-shrink: 0;
 }
 
-.avatar-blue { background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); }
-.avatar-orange { background: linear-gradient(135deg,#f97316,#fb923c); }
-.avatar-green { background: linear-gradient(135deg,#10b981,#34d399); }
-.avatar-purple { background: linear-gradient(135deg,#a855f7,#7c3aed); }
-.avatar-teal { background: linear-gradient(135deg,#10b981,#059669); }
+.avatar-blue {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+}
+
+.avatar-orange {
+    background: linear-gradient(135deg, #f97316, #fb923c);
+}
+
+.avatar-green {
+    background: linear-gradient(135deg, #10b981, #34d399);
+}
+
+.avatar-purple {
+    background: linear-gradient(135deg, #a855f7, #7c3aed);
+}
+
+.avatar-teal {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
 
 .lead-name {
     font-weight: 700;
     color: var(--text-primary);
 }
+
 .lead-company {
     font-size: 12px;
     color: var(--text-muted);
 }
+
 .lead-time {
     font-size: 12px;
     color: var(--text-muted);
 }
+
 .lead-description {
     color: var(--text-primary);
     margin-bottom: 6px;
     line-height: 1.35;
     font-size: 13px;
 }
+
 .lead-tags {
     display: flex;
     gap: 8px;
@@ -1182,6 +1209,7 @@ img, canvas, iframe, embed, object, table {
     gap: 12px;
     align-items: center;
 }
+
 .lead-search-input {
     flex: 1;
     padding: 10px 14px;
@@ -1191,9 +1219,23 @@ img, canvas, iframe, embed, object, table {
     color: var(--text-primary);
 }
 
-.tag-muted { background: rgba(99,102,241,0.08); color: #6366f1; border-color: rgba(99,102,241,0.4); }
-.tag-blue { background: rgba(59,130,246,0.08); color: #3b82f6; border-color: rgba(59,130,246,0.4); }
-.tag-green { background: rgba(16,185,129,0.12); color: var(--status-shipped); border-color: var(--status-shipped); }
+.tag-muted {
+    background: rgba(99, 102, 241, 0.08);
+    color: #6366f1;
+    border-color: rgba(99, 102, 241, 0.4);
+}
+
+.tag-blue {
+    background: rgba(59, 130, 246, 0.08);
+    color: #3b82f6;
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.tag-green {
+    background: rgba(16, 185, 129, 0.12);
+    color: var(--status-shipped);
+    border-color: var(--status-shipped);
+}
 
 
 
@@ -1201,10 +1243,10 @@ img, canvas, iframe, embed, object, table {
    Leads Modal CSS 
    ============================================ */
 
-   .modal-overlay {
+.modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     display: none;
     align-items: center;
     justify-content: center;
@@ -1252,8 +1294,9 @@ img, canvas, iframe, embed, object, table {
     opacity: 0.5;
     transform: rotate(2deg);
 }
+
 .lead-column-body.drag-over {
-    background: rgba(99,102,241,0.08);
+    background: rgba(99, 102, 241, 0.08);
     border-radius: 8px;
 }
 
@@ -1264,7 +1307,7 @@ img, canvas, iframe, embed, object, table {
 .view-toggle-section {
     display: flex;
     gap: 12px;
-     padding: 0;
+    padding: 0;
 }
 
 .view-toggle-btn {
@@ -1306,4 +1349,525 @@ img, canvas, iframe, embed, object, table {
 
 .view-content.hidden {
     display: none;
+}
+
+
+/* =========================
+   Lead Detail Page
+   ========================= */
+
+.lead-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.lead-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.lead-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.status-pill {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-left: 12px;
+}
+
+.status-new {
+    background: var(--status-new);
+}
+
+.lead-detail-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 24px;
+}
+
+.detail-card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-md);
+}
+
+.detail-card h3 {
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.person-card {
+    display: flex;
+    gap: 12px;
+}
+
+.person-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+/* Timeline */
+
+.timeline-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.timeline-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--accent-green);
+    border-radius: 50%;
+    margin-top: 6px;
+}
+
+
+
+
+/* ============================================
+   Lead Detail Page - DTFTA Dark Theme
+   ============================================ */
+
+.ld-page {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    min-height: 100vh;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* LEFT PANEL */
+.ld-left-panel {
+    background: var(--bg-sidebar);
+    padding: 20px;
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto;
+}
+
+.ld-breadcrumb {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.ld-title {
+    font-size: 20px;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+/* Action Buttons */
+.ld-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.ld-action {
+    padding: 12px;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.ld-action:hover {
+    transform: translateY(-2px);
+    color: var(--text-primary);
+}
+
+.ld-action.mail {
+    border-left: 4px solid var(--accent-blue);
+}
+
+.ld-action.file {
+    border-left: 4px solid var(--accent-purple);
+}
+
+.ld-action.note {
+    border-left: 4px solid var(--accent-orange);
+}
+
+.ld-action.activity {
+    border-left: 4px solid var(--accent-green);
+}
+
+/* Sections */
+.ld-section {
+    margin-bottom: 24px;
+}
+
+.ld-section h3 {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.ld-info div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.ld-info span {
+    color: var(--text-muted);
+}
+
+.ld-info b {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Person */
+.ld-person {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,
+            var(--accent-blue),
+            var(--accent-purple));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: white;
+}
+
+/* RIGHT PANEL */
+.ld-right-panel {
+    padding: 24px;
+    overflow-y: auto;
+}
+
+/* ============================================
+   DARK THEME CHEVRON STEPPER (REFERENCE STYLE)
+   ============================================ */
+
+.ld-stepper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px;
+    overflow-x: auto;
+    gap:20px;
+}
+
+/* Base step */
+.step {
+    position: relative;
+    padding: 12px 26px;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    border-radius: 8px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+/* Right arrow */
+.step::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -14px;
+    width: 0;
+    height: 0;
+    border-top: 23px solid transparent;
+    border-bottom: 22px solid transparent;
+    border-left: 14px solid var(--bg-secondary);
+}
+.step:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+/* Middle steps */
+.step:not(:first-child):not(:last-child) {
+    border-radius: 8px 0 0 8px;
+}
+
+/* Last step */
+.step:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
+/* First step (flat left side) */
+.step:first-child {
+    padding-left: 22px;
+    border-left: 1px solid var(--border-color);
+    border-radius: 8px 0 0 8px;
+}
+
+.step:first-child::before {
+    display: none;
+}
+
+/* Last step (no arrow on right) */
+.step:last-child {
+    border-right: 1px solid var(--border-color);
+    border-radius: 0 8px 8px 0;
+}
+
+.step:last-child::after {
+    display: none;
+}
+
+/* =========================
+   ACTIVE STEP (Website Blue)
+   ========================= */
+
+/* ACTIVE (Blue selection) */
+.step.active {
+    background: var(--accent-blue);
+    color: #fff;
+}
+
+.step.active::after {
+    border-left-color: var(--accent-blue);
+}
+
+/* Hover effect */
+.step:hover {
+    filter: brightness(1.08);
+}
+
+/* =========================
+   COMPLETED STEP (Darker Blue)
+   ========================= */
+
+.step.completed {
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--accent-blue);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.step.completed::after {
+    border-left-color: rgba(59, 130, 246, 0.15);
+}
+
+.step {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.step:hover {
+    filter: brightness(1.1);
+}
+
+/* Tabs */
+.ld-tabs {
+    display: flex;
+    gap: 18px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 18px;
+}
+
+.tab {
+    padding: 10px 4px;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-size: 14px;
+    position: relative;
+}
+
+.tab.active {
+    color: var(--accent-blue);
+    font-weight: 500;
+}
+
+.tab.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 2px;
+    width: 100%;
+    background: var(--accent-blue);
+}
+
+/* Timeline */
+.ld-timeline-item {
+    display: flex;
+    gap: 14px;
+    background: var(--bg-card);
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.ld-timeline-item b {
+    font-weight: 500;
+}
+
+.ld-timeline-item p {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* Timeline Icon */
+.ld-icon {
+    width: 34px;
+    height: 34px;
+    background: var(--bg-tertiary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-blue);
+    font-size: 16px;
+}
+
+/* ============================================
+     MODALS (DTFTA themed)
+     ============================================ */
+
+.ld-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.ld-modal {
+    background: var(--bg-secondary);
+    padding: 20px;
+    border-radius: 12px;
+    width: 420px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+}
+
+.ld-modal h3 {
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.ld-modal input,
+.ld-modal textarea,
+.ld-modal select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+.ld-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.ld-modal-actions button {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.ld-modal-actions button:first-child {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+}
+
+.ld-modal-actions button:last-child {
+    background: var(--accent-blue);
+    color: white;
+}
+
+.ld-modal input::placeholder,
+.ld-modal textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.ld-modal input:focus,
+.ld-modal textarea:focus,
+.ld-modal select:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+
+/* ============================================
+   LEFT PANEL CARDS
+   ============================================ */
+
+.ld-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 18px;
+    box-shadow: var(--shadow-sm);
+}
+
+.ld-card h3 {
+    margin-bottom: 12px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+}
+
+/* Slight accent line */
+.ld-card::before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 40px;
+    background: var(--accent-blue);
+    border-radius: 2px;
+    margin-bottom: 10px;
+}
+
+/* Person card tweaks */
+.ld-person p {
+    font-size: 13px;
+    color: var(--text-secondary);
 }

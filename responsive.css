@@ -77,6 +77,17 @@
         font-size: 16px;
         margin-bottom: 16px;
     }
+    .ld-page {
+        grid-template-columns: 300px 1fr;
+    }
+
+    .ld-left-panel {
+        padding: 18px;
+    }
+
+    .ld-right-panel {
+        padding: 20px;
+    }
 }
 
 /* stronger overrides to ensure sidebar stays hidden on tablet/mobile */
@@ -102,6 +113,22 @@
     .menu-toggle {
         display: flex !important;
     }
+}
+
+@media screen and (max-width: 991px) {
+
+    .ld-page {
+        grid-template-columns: 260px 1fr;
+    }
+
+    .ld-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .ld-stepper {
+        flex-wrap: wrap;
+    }
+
 }
 
 /* Leads board: make horizontally scrollable on tablets */
@@ -236,6 +263,45 @@
 
     .chart-card h3 {
         font-size: 15px;
+    }
+
+    .ld-page {
+        grid-template-columns: 1fr;
+    }
+
+    .ld-left-panel {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .ld-right-panel {
+        padding: 18px;
+    }
+
+    /* Tabs scroll horizontally */
+    .ld-tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+    }
+
+    .ld-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tab {
+        flex-shrink: 0;
+    }
+
+    /* Stepper scroll */
+    .ld-stepper {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 6px;
+    }
+
+    .step {
+        flex-shrink: 0;
     }
 }
 

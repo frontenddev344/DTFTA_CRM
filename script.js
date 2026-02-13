@@ -785,3 +785,114 @@ function switchView(viewType) {
         }
     }
 }
+
+
+// Lead modals js
+// =======================
+// MODALS (GLOBAL)
+// =======================
+window.openLdModal = function (type) {
+    closeLdModal();
+    const modal = document.getElementById(type + 'Modal');
+    if (modal) modal.style.display = 'flex';
+};
+
+window.closeLdModal = function () {
+    document.querySelectorAll('.ld-modal-overlay').forEach(m => {
+        m.style.display = 'none';
+    });
+};
+
+// =======================
+// DOM READY
+// =======================
+document.addEventListener("DOMContentLoaded", function () {
+
+    // =======================
+    // CLOSE ON OUTSIDE CLICK
+    // =======================
+    document.querySelectorAll('.ld-modal-overlay').forEach(modal => {
+        modal.addEventListener('click', e => {
+            if (e.target.classList.contains('ld-modal-overlay')) {
+                closeLdModal();
+            }
+        });
+    });
+
+    // =======================
+    // CLOSE ON ESC
+    // =======================
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeLdModal();
+    });
+
+    // =======================
+    // TABS SYSTEM
+    // =======================
+    const tabs = document.querySelectorAll('.tab');
+    const content = document.querySelector('.ld-content');
+
+    function timeline(text) {
+        return `
+            <div class="ld-timeline-item">
+                <div class="ld-icon">⚙️</div>
+                <div>
+                    <b>${text}</b>
+                    <p>13 Feb 2026, 3:00 PM, By Example</p>
+                </div>
+            </div>
+        `;
+    }
+
+    function baseTimeline() {
+        return `
+            ${timeline("Updated Stage: Won → New")}
+            ${timeline("Updated Stage: Negotiation → Won")}
+            ${timeline("Lead created")}
+        `;
+    }
+
+    const tabData = {
+        All: baseTimeline(),
+        Planned: timeline("📅 Planned meeting with client"),
+        Notes: timeline("📝 Internal note added"),
+        Calls: timeline("📞 Call with Billy James"),
+        Meetings: timeline("🤝 Zoom meeting scheduled"),
+        Files: timeline("📁 Proposal.pdf uploaded"),
+        Emails: timeline("✉️ Follow-up email sent"),
+        Products: timeline("🧩 Product added: TaskMaster Pro"),
+        Quotes: timeline("💰 Quote generated: $10,000")
+    };
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            const key = tab.innerText.trim();
+            content.innerHTML = tabData[key] || "";
+        });
+    });
+
+});
+
+
+// Lead Stepper JS 
+document.addEventListener("DOMContentLoaded", function () {
+    const steps = document.querySelectorAll(".ld-stepper .step");
+
+    steps.forEach((step, index) => {
+        step.addEventListener("click", function () {
+
+            steps.forEach((s, i) => {
+                s.classList.remove("active");
+
+                if (i <= index) {
+                    s.classList.add("active");
+                }
+            });
+
+        });
+    });
+});
+

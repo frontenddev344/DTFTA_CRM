@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTFTA CRM - Orders / Jobs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-header-content">
+                    <h2>DTFTA CRM</h2>
+                    <p class="subtitle">Ops Dashboard</p>
+                </div>
+                <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">×</button>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="orders.html" class="nav-item active">
+                    <span class="nav-icon">📦</span>
+                    <span>Orders / Jobs</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">🚚</span>
+                    <span>Shipping</span>
+                </a>
+                <a href="stores.html" class="nav-item">
+                    <span class="nav-icon">🏪</span>
+                    <span>Stores</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">📈</span>
+                    <span>Reports</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">A</div>
+                    <div class="user-details">
+                        <p class="user-name">Admin</p>
+                        <p class="user-role">Administrator</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Mobile Overlay -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <header class="page-header">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <h1>Orders / Jobs Management</h1>
+                <div class="header-actions">
+                    <button class="btn-primary" id="headerCreateBtn">Create Lead</button>
+                    <button class="btn-icon">🔔</button>
+                    <button class="btn-icon">⚙️</button>
+                </div>
+            </header>
+            <div class="ld-page">
+
+                <!-- LEFT PANEL -->
+                <div class="ld-left-panel">
+
+                    <div class="ld-breadcrumb">
+                        Dashboard / Leads / #8
+                    </div>
+
+                    <h2 class="ld-title">
+                        Enquiry: ProjectPulse Enterprise Solution
+                    </h2>
+
+                    <div class="ld-actions">
+                        <div class="ld-action mail" onclick="openLdModal('mail')">Mail</div>
+                        <div class="ld-action file" onclick="openLdModal('file')">File</div>
+                        <div class="ld-action note" onclick="openLdModal('note')">Note</div>
+                        <div class="ld-action activity" onclick="openLdModal('activity')">Activity</div>
+                    </div>
+
+                    <div class="ld-section">
+                        <div class="ld-card">
+                            <h3>About Lead</h3>
+                            <div class="ld-info">
+                                <div><span>Lead Value</span><b>10000</b></div>
+                                <div><span>Source</span><b>Phone</b></div>
+                                <div><span>Type</span><b>New Business</b></div>
+                                <div><span>Sales Owner</span><b>Example</b></div>
+                                <div><span>Expected Close</span><b>2024-10-02</b></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ld-section">
+                        <div class="ld-card">
+                            <h3>About Person</h3>
+                            <div class="ld-person">
+                                <div class="avatar">BJ</div>
+                                <div>
+                                    <b>Billy James</b>
+                                    <p>Sales Rep at SentinelSecure</p>
+                                    <p>billy@example.com</p>
+                                    <p>4545454545</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT PANEL -->
+                <div class="ld-right-panel">
+
+                    <div class="ld-stepper">
+                        <div class="step active">New</div>
+                        <div class="step">Follow Up</div>
+                        <div class="step">Prospect</div>
+                        <div class="step">Negotiation</div>
+                        <div class="step">Won/Lost</div>
+                    </div>
+
+                    <div class="ld-tabs">
+                        <div class="tab active">All</div>
+                        <div class="tab">Planned</div>
+                        <div class="tab">Notes</div>
+                        <div class="tab">Calls</div>
+                        <div class="tab">Meetings</div>
+                        <div class="tab">Files</div>
+                        <div class="tab">Emails</div>
+                        <div class="tab">Products</div>
+                        <div class="tab">Quotes</div>
+                    </div>
+
+                    <div class="ld-content">
+                        <div class="ld-timeline-item">
+                            <div class="ld-icon">⚙️</div>
+                            <div>
+                                <b>Updated Stage: Won → New</b>
+                                <p>13 Feb 2026, 2:32 PM, By Example</p>
+                            </div>
+                        </div>
+
+                        <div class="ld-timeline-item">
+                            <div class="ld-icon">⚙️</div>
+                            <div>
+                                <b>Updated Stage: Negotiation → Won</b>
+                                <p>13 Feb 2026, 2:32 PM, By Example</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ================= MODALS ================= -->
+
+    <div class="ld-modal-overlay" id="mailModal">
+        <div class="ld-modal">
+            <h3>Compose Mail</h3>
+            <input placeholder="To">
+            <input placeholder="Subject">
+            <textarea placeholder="Message"></textarea>
+            <div class="ld-modal-actions">
+                <button onclick="closeLdModal()">Cancel</button>
+                <button>Send</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ld-modal-overlay" id="fileModal">
+        <div class="ld-modal">
+            <h3>Add File</h3>
+            <input type="file">
+            <div class="ld-modal-actions">
+                <button onclick="closeLdModal()">Cancel</button>
+                <button>Save</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ld-modal-overlay" id="noteModal">
+        <div class="ld-modal">
+            <h3>Add Note</h3>
+            <textarea placeholder="Write note..."></textarea>
+            <div class="ld-modal-actions">
+                <button onclick="closeLdModal()">Cancel</button>
+                <button>Save</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ld-modal-overlay" id="activityModal">
+        <div class="ld-modal">
+            <h3>Add Activity</h3>
+    
+            <input placeholder="Title">
+    
+            <select>
+                <option value="">Select Participants</option>
+                <option>Billy James</option>
+                <option>Alex Morgan</option>
+                <option>Sarah Connor</option>
+            </select>
+    
+            <input placeholder="Location">
+    
+            <textarea placeholder="Description"></textarea>
+    
+            <div class="ld-modal-actions">
+                <button onclick="closeLdModal()">Cancel</button>
+                <button>Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
