@@ -362,16 +362,14 @@ function initializeJobDetail() {
     setJobStatus(status);
 }
 
+
 function setJobStatus(status) {
-    // Normalize
     status = status.toUpperCase();
 
-    // 1. Update Status Badge
+    // Update Status Badge
     const badge = document.getElementById('statusBadge');
     if (badge) {
-        // Display human-friendly label (replace underscores with spaces)
         badge.textContent = status.replace(/_/g, ' ');
-        // Map internal status keys to CSS suffixes used in styles.css
         const statusClassMap = {
             'NEW': 'new',
             'ARTWORK_NEEDED': 'artwork',
@@ -381,10 +379,12 @@ function setJobStatus(status) {
             'EXCEPTION': 'exception'
         };
         const cssSuffix = statusClassMap[status] || 'new';
-        badge.className = `status-badge large status-${cssSuffix}`;
+
+        // Reset badge classes
+        badge.className = 'status-badge';
+        badge.classList.add(`status-${cssSuffix}`);
     }
 
-    // 2. Update Action Buttons
     updateActionButtons(status);
 
     // 3. Update Stepper
@@ -415,7 +415,6 @@ function updateActionButtons(status) {
                 <button class="btn-danger" onclick="cancelJob()">Cancel Job</button>
             `;
             break;
-
         case 'ARTWORK_NEEDED':
             actionSection.innerHTML = `
                 <button class="btn-secondary" onclick="uploadArtwork()">Upload / View Artwork</button>
@@ -423,14 +422,12 @@ function updateActionButtons(status) {
                 <button class="btn-danger" onclick="cancelJob()">Cancel Job</button>
             `;
             break;
-
         case 'IN_PRODUCTION':
             actionSection.innerHTML = `
                 <button class="btn-primary" onclick="markShipped()">Mark as Shipped</button>
                 <button class="btn-warning" onclick="markException()">Mark as Exception</button>
             `;
             break;
-
         case 'SHIPPED':
             actionSection.innerHTML = `
                 <p style="color: var(--text-secondary);">
@@ -438,7 +435,6 @@ function updateActionButtons(status) {
                 </p>
             `;
             break;
-
         case 'CANCELLED':
         case 'EXCEPTION':
             actionSection.innerHTML = `
@@ -879,7 +875,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Lead Stepper JS 
 document.addEventListener("DOMContentLoaded", function () {
-    const steps = document.querySelectorAll(".ld-stepper .step");
+    const steps = document.querySelectorAll("#ldStepper .step");
 
     steps.forEach((step, index) => {
         step.addEventListener("click", function () {
