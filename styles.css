@@ -315,6 +315,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: var(--shadow-sm);
+    display: inline-block;
 }
 
 .btn-primary:hover {
@@ -1471,6 +1472,7 @@ table {
     font-size: 13px;
     color: var(--text-muted);
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .ld-title {
@@ -1621,7 +1623,7 @@ table {
 
 /* RIGHT PANEL */
 .ld-right-panel {
-    padding: 24px;
+    padding:0 24px;
     overflow-y: auto;
 }
 
