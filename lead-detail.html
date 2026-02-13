@@ -97,36 +97,67 @@
 
                     <div class="ld-section">
                         <div class="ld-card">
-                            <h3>About Lead</h3>
+                            <h3>Order Info</h3>
                             <div class="ld-info">
-                                <div><span>Lead Value</span><b>10000</b></div>
-                                <div><span>Source</span><b>Phone</b></div>
-                                <div><span>Type</span><b>New Business</b></div>
-                                <div><span>Sales Owner</span><b>Example</b></div>
-                                <div><span>Expected Close</span><b>2024-10-02</b></div>
+                                <div><span>Store Name</span><b>Example Store</b></div>
+                                <div><span>Shopify Order ID</span><b>#123456789</b></div>
+                                <div><span>Fulfillment Type</span><b>DTF</b></div>
                             </div>
                         </div>
                     </div>
 
                     <div class="ld-section">
                         <div class="ld-card">
-                            <h3>About Person</h3>
-                            <div class="ld-person">
-                                <div class="avatar">BJ</div>
-                                <div>
-                                    <b>Billy James</b>
-                                    <p>Sales Rep at SentinelSecure</p>
-                                    <p>billy@example.com</p>
-                                    <p>4545454545</p>
-                                </div>
+                            <h3>Garment Details (Apparel POD only)</h3>
+                            <div class="ld-info">
+                                <div><span>Brand</span><b>Gildan</b></div>
+                                <div><span>Style code</span><b>GS123</b></div>
+                                <div><span>Color</span><b>Black</b></div>
+                                <div><span>Size</span><b>Large</b></div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="ld-section">
+                        <div class="ld-card">
+                            <h3>Print Details</h3>
+                            <div class="ld-info">
+                                <div><span>Placement</span><b>Front</b></div>
+                                <div><span>Print size</span><b>12x16</b></div>
+                                <div class="artwork-preview">
+                                    <span>Artwork preview</span>
+                                    <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRtzxlxp1w4UxV3Af8KfAx4Ht2Y_Q9gzu6IVVShXECxOnuAVJWlK09rWqegtdyy0JzSsFMsUGCL2bCtgEB2x47GxhJ6GPpGaX0EfP8cWJYvCD3AZ3wbvmEkoATIk3hEJgbNdUDkRFrv&usqp=CAc" alt="Artwork preview" />
+                                </div>
+                                <button class="btn-download-artwork">Download Artwork</button>
+                            </div>
+                        </div>
+                    </div>
+
 
                 </div>
 
                 <!-- RIGHT PANEL -->
                 <div class="ld-right-panel">
+
+                    <div class="job-info-card ld-card">
+                        <div class="job-info-row">
+                          <span>Job ID</span>
+                          <b>#987654321</b>
+                        </div>
+                        <div class="job-info-row">
+                          <span>Store Name</span>
+                          <b>Example Store</b>
+                        </div>
+                        <div class="job-info-row">
+                          <span>Shopify Order Number</span>
+                          <b>#123456789</b>
+                        </div>
+                        <div class="job-info-row status-row">
+                          <span>Current Status</span>
+                          <span class="status-badge status-new">NEW</span>
+                        </div>
+                      </div>
+                      
 
                     <div class="ld-stepper" id="ldStepper">
                         <div class="step active">NEW</div>
@@ -134,7 +165,7 @@
                         <div class="step">IN PRODUCTION</div>
                         <div class="step">SHIPPED</div>
                     </div>
-                    
+
 
                     <div class="ld-tabs">
                         <div class="tab active">All</div>
@@ -211,20 +242,20 @@
     <div class="ld-modal-overlay" id="activityModal">
         <div class="ld-modal">
             <h3>Add Activity</h3>
-    
+
             <input placeholder="Title">
-    
+
             <select>
                 <option value="">Select Participants</option>
                 <option>Billy James</option>
                 <option>Alex Morgan</option>
                 <option>Sarah Connor</option>
             </select>
-    
+
             <input placeholder="Location">
-    
+
             <textarea placeholder="Description"></textarea>
-    
+
             <div class="ld-modal-actions">
                 <button onclick="closeLdModal()">Cancel</button>
                 <button>Save</button>

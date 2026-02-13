@@ -1548,7 +1548,56 @@ table {
     color: var(--text-primary);
     font-weight: 500;
 }
-
+.ld-info div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+    align-items: center;
+  }
+  
+  .artwork-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  
+  .artwork-preview span {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 4px;
+    display: block;
+    text-align: left;
+    width: 100%;
+}
+  
+  .artwork-preview img {
+    width: 120px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    margin-right: auto;
+  }
+  
+  .btn-download-artwork {
+    padding: 8px 14px;
+    border: none;
+    background: var(--accent-blue);
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-download-artwork:hover {
+    background: #1565c0; /* slightly darker blue */
+  }
+  
 /* Person */
 .ld-person {
     display: flex;
@@ -1875,3 +1924,61 @@ table {
     font-size: 13px;
     color: var(--text-secondary);
 }
+
+
+.job-info-card {
+    margin-bottom: 24px;
+    padding: 20px 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    box-shadow: var(--shadow-sm);
+    color: var(--text-primary);
+    font-family: inherit;
+  }
+  
+  .job-info-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 14px;
+    align-items: center;
+  }
+  
+  .job-info-row:last-child {
+    margin-bottom: 0;
+  }
+  
+  .job-info-row span {
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 12px;
+  }
+  
+  .job-info-row b {
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  .status-row b,
+  .status-row .status-badge {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  
+  /* Status badge style */
+  .status-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background-color: var(--accent-blue);
+    color: white;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    user-select: none;
+  }
+  
