@@ -1648,7 +1648,11 @@ table {
 .step:last-child::after {
     display: none;
 }
-
+.asterisk {
+    margin-left: 4px;
+    color: #ef4444; /* subtle red */
+    font-weight: 600;
+}
 /* =========================
    ACTIVE STEP (Website Blue)
    ========================= */
