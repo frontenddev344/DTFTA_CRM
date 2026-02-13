@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeSidebarToggle();
     initializeStoreCheckboxes();
     initializeCounters();
+    initializeViewToggle();
+    initializeLeadDragDrop();
 });
 
 // ============================================
@@ -659,8 +661,30 @@ function addLead() {
 
 /* ---------- DRAG & DROP ---------- */
 
-// Make existing cards draggable
-document.querySelectorAll('.lead-card').forEach(makeCardDraggable);
+function initializeLeadDragDrop() {
+    // Make existing cards draggable
+    document.querySelectorAll('.lead-card').forEach(makeCardDraggable);
+
+    // Make columns droppable
+    document.querySelectorAll('.lead-column-body').forEach(column => {
+        column.addEventListener('dragover', e => {
+            e.preventDefault();
+            column.classList.add('drag-over');
+        });
+
+        column.addEventListener('dragleave', () => {
+            column.classList.remove('drag-over');
+        });
+
+        column.addEventListener('drop', () => {
+            column.classList.remove('drag-over');
+            if (!draggedCard) return;
+
+            column.prepend(draggedCard);
+            updateCardStatus(draggedCard, column);
+        });
+    });
+}
 
 function makeCardDraggable(card) {
     card.setAttribute('draggable', 'true');
@@ -675,26 +699,6 @@ function makeCardDraggable(card) {
         draggedCard = null;
     });
 }
-
-// Make columns droppable
-document.querySelectorAll('.lead-column-body').forEach(column => {
-    column.addEventListener('dragover', e => {
-        e.preventDefault();
-        column.classList.add('drag-over');
-    });
-
-    column.addEventListener('dragleave', () => {
-        column.classList.remove('drag-over');
-    });
-
-    column.addEventListener('drop', () => {
-        column.classList.remove('drag-over');
-        if (!draggedCard) return;
-
-        column.prepend(draggedCard);
-        updateCardStatus(draggedCard, column);
-    });
-});
 
 /* ---------- STATUS UPDATE ---------- */
 
@@ -718,11 +722,66 @@ function updateCardStatus(card, columnBody) {
 /* ---------- UX EXTRAS ---------- */
 
 // Close modal on outside click
-document.getElementById('addLeadModal').addEventListener('click', e => {
-    if (e.target.id === 'addLeadModal') closeModal();
-});
+const addLeadModal = document.getElementById('addLeadModal');
+if (addLeadModal) {
+    addLeadModal.addEventListener('click', e => {
+        if (e.target.id === 'addLeadModal') closeModal();
+    });
+}
 
 // Close modal on ESC
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeModal();
 });
+
+// ============================================
+// View Toggle Functionality
+// ============================================
+
+function initializeViewToggle() {
+    // Set default view to board
+    const boardView = document.getElementById('boardView');
+    const tableView = document.getElementById('tableView');
+    const boardViewBtn = document.getElementById('boardViewBtn');
+    const tableViewBtn = document.getElementById('tableViewBtn');
+    const headerCreateBtn = document.getElementById('headerCreateBtn');
+
+    if (!boardView || !tableView || !boardViewBtn || !tableViewBtn) return;
+
+    // Initialize: show board view by default
+    boardView.style.display = 'block';
+    tableView.style.display = 'none';
+    boardViewBtn.classList.add('active');
+    tableViewBtn.classList.remove('active');
+    if (headerCreateBtn) {
+        headerCreateBtn.textContent = 'Create Lead';
+    }
+}
+
+function switchView(viewType) {
+    const boardView = document.getElementById('boardView');
+    const tableView = document.getElementById('tableView');
+    const boardViewBtn = document.getElementById('boardViewBtn');
+    const tableViewBtn = document.getElementById('tableViewBtn');
+    const headerCreateBtn = document.getElementById('headerCreateBtn');
+
+    if (!boardView || !tableView || !boardViewBtn || !tableViewBtn) return;
+
+    if (viewType === 'board') {
+        boardView.style.display = 'block';
+        tableView.style.display = 'none';
+        boardViewBtn.classList.add('active');
+        tableViewBtn.classList.remove('active');
+        if (headerCreateBtn) {
+            headerCreateBtn.textContent = 'Create Lead';
+        }
+    } else if (viewType === 'table') {
+        boardView.style.display = 'none';
+        tableView.style.display = 'block';
+        boardViewBtn.classList.remove('active');
+        tableViewBtn.classList.add('active');
+        if (headerCreateBtn) {
+            headerCreateBtn.textContent = '+ New Job';
+        }
+    }
+}

@@ -1256,3 +1256,54 @@ img, canvas, iframe, embed, object, table {
     background: rgba(99,102,241,0.08);
     border-radius: 8px;
 }
+
+/* ============================================
+   View Toggle Buttons
+   ============================================ */
+
+.view-toggle-section {
+    display: flex;
+    gap: 12px;
+     padding: 0;
+}
+
+.view-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-card);
+    color: var(--text-secondary);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.view-toggle-btn span {
+    font-size: 18px;
+}
+
+.view-toggle-btn:hover {
+    background-color: var(--bg-secondary);
+    border-color: var(--accent-blue);
+    color: var(--text-primary);
+}
+
+.view-toggle-btn.active {
+    background: linear-gradient(135deg, var(--accent-blue), #2563eb);
+    color: white;
+    border-color: var(--accent-blue);
+    box-shadow: var(--shadow-sm);
+}
+
+.view-content {
+    display: block;
+}
+
+.view-content.hidden {
+    display: none;
+}
