@@ -1207,7 +1207,7 @@ select.filter-select:focus {
     flex: 1;
     padding: 10px;
     border: 1px solid var(--border-color);
-    border-radius: 20px;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -1268,7 +1268,7 @@ select.filter-select:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
 }
 
 .lead-card-info {
@@ -1287,6 +1287,8 @@ select.filter-select:focus {
     font-weight: 700;
     color: #fff;
     flex-shrink: 0;
+    font-size: 14px;
+    line-height: 1;
 }
 
 .avatar-blue {
@@ -1326,9 +1328,9 @@ select.filter-select:focus {
 
 .lead-description {
     color: var(--text-primary);
-    margin-bottom: 6px;
+    margin-bottom: 15px;
     line-height: 1.35;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .lead-tags {
@@ -2219,7 +2221,7 @@ select.filter-select:focus {
     background-color: var(--accent-blue);
     color: white;
     border-radius: 20px;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 12px;
     text-transform: capitalize;
     letter-spacing: 0.1em;
