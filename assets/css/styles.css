@@ -2495,10 +2495,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
    Settings Page
    ============================================ */
 
-.settings-sections {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+   .settings-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
 }
 
 .settings-card {
