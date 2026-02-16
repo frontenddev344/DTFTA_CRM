@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DTFTA CRM - Job Detail</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -23,23 +23,23 @@
             </div>
             <nav class="nav-menu">
                 <a href="index.html" class="nav-item">
-                    <span class="nav-icon">📊</span>
+                    <span class="nav-icon nav-icon-dashboard" aria-hidden="true"></span>
                     <span>Dashboard</span>
                 </a>
                 <a href="orders.html" class="nav-item active">
-                    <span class="nav-icon">📦</span>
+                    <span class="nav-icon nav-icon-orders" aria-hidden="true"></span>
                     <span>Orders / Jobs</span>
-                </a>               
-                <a href="#" class="nav-item">
-                    <span class="nav-icon">🚚</span>
+                </a>
+                <a href="shipping.html" class="nav-item">
+                    <span class="nav-icon nav-icon-shipping" aria-hidden="true"></span>
                     <span>Shipping</span>
                 </a>
                 <a href="stores.html" class="nav-item">
-                    <span class="nav-icon">🏪</span>
+                    <span class="nav-icon nav-icon-stores" aria-hidden="true"></span>
                     <span>Stores</span>
                 </a>
-                <a href="#" class="nav-item">
-                    <span class="nav-icon">📈</span>
+                <a href="reports.html" class="nav-item">
+                    <span class="nav-icon nav-icon-reports" aria-hidden="true"></span>
                     <span>Reports</span>
                 </a>
             </nav>
@@ -70,8 +70,8 @@
                     <h1>Job Detail</h1>
                 </div>
                 <div class="header-actions">
-                    <button class="btn-icon">🔔</button>
-                    <button class="btn-icon">⚙️</button>
+                    <button class="btn-icon btn-icon-bell" aria-label="Notifications"></button>
+                    <button class="btn-icon btn-icon-settings" aria-label="Settings"></button>
                 </div>
             </header>
 
@@ -170,7 +170,7 @@
                     <div class="detail-item">
                         <span class="detail-label">Artwork:</span>
                         <div class="artwork-preview">
-                            <img src="https://via.placeholder.com/200x200/4A90E2/ffffff?text=Artwork+Preview" alt="Artwork Preview">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect fill='%234A90E2' width='200' height='200'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23fff' font-family='sans-serif' font-size='14'%3EArtwork Preview%3C/text%3E%3C/svg%3E" alt="Artwork Preview" width="200" height="200">
                             <button class="btn-secondary">Download Artwork</button>
                         </div>
                     </div>
@@ -184,7 +184,7 @@
             <!-- Exception/Artwork Needed Info -->
             <div class="exception-section" id="exceptionSection" style="display: none;">
                 <div class="exception-card">
-                    <h3>⚠️ Exception / Artwork Needed</h3>
+                    <h3><span class="section-icon section-icon-alert" aria-hidden="true"></span>Exception / Artwork Needed</h3>
                     <div class="exception-content">
                         <p><strong>Reason:</strong> <span id="exceptionReason">Artwork quality is low, needs revision</span></p>
                         <p><strong>Created:</strong> <span id="exceptionDate">2024-01-15 10:30 AM</span></p>
@@ -194,6 +194,6 @@
         </main>
     </div>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

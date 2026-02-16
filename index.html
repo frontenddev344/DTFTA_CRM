@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DTFTA CRM - Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -23,23 +23,23 @@
             </div>
             <nav class="nav-menu">
                 <a href="index.html" class="nav-item active">
-                    <span class="nav-icon">📊</span>
+                    <span class="nav-icon nav-icon-dashboard" aria-hidden="true"></span>
                     <span>Dashboard</span>
                 </a>
                 <a href="orders.html" class="nav-item">
-                    <span class="nav-icon">📦</span>
+                    <span class="nav-icon nav-icon-orders" aria-hidden="true"></span>
                     <span>Orders / Jobs</span>
-                </a>               
-                <a href="#" class="nav-item">
-                    <span class="nav-icon">🚚</span>
+                </a>
+                <a href="shipping.html" class="nav-item">
+                    <span class="nav-icon nav-icon-shipping" aria-hidden="true"></span>
                     <span>Shipping</span>
                 </a>
                 <a href="stores.html" class="nav-item">
-                    <span class="nav-icon">🏪</span>
+                    <span class="nav-icon nav-icon-stores" aria-hidden="true"></span>
                     <span>Stores</span>
                 </a>
-                <a href="#" class="nav-item">
-                    <span class="nav-icon">📈</span>
+                <a href="reports.html" class="nav-item">
+                    <span class="nav-icon nav-icon-reports" aria-hidden="true"></span>
                     <span>Reports</span>
                 </a>
             </nav>
@@ -67,15 +67,15 @@
                 </button>
                 <h1>Dashboard Overview</h1>
                 <div class="header-actions">
-                    <button class="btn-icon">🔔</button>
-                    <button class="btn-icon">⚙️</button>
+                    <button class="btn-icon btn-icon-bell" aria-label="Notifications"></button>
+                    <button class="btn-icon btn-icon-settings" aria-label="Settings"></button>
                 </div>
             </header>
 
             <!-- Dashboard Cards -->
             <div class="cards-grid">
                 <div class="card card-blue">
-                    <div class="card-icon">📋</div>
+                    <div class="card-icon card-icon-clipboard" aria-hidden="true"></div>
                     <div class="card-content">
                         <h3>Total Orders</h3>
                         <p class="card-value">1,234</p>
@@ -84,7 +84,7 @@
                 </div>
 
                 <div class="card card-orange">
-                    <div class="card-icon">⏳</div>
+                    <div class="card-icon card-icon-clock" aria-hidden="true"></div>
                     <div class="card-content">
                         <h3>Pending Jobs</h3>
                         <p class="card-value">89</p>
@@ -93,7 +93,7 @@
                 </div>
 
                 <div class="card card-purple">
-                    <div class="card-icon">🏭</div>
+                    <div class="card-icon card-icon-factory" aria-hidden="true"></div>
                     <div class="card-content">
                         <h3>In Production</h3>
                         <p class="card-value">156</p>
@@ -102,7 +102,7 @@
                 </div>
 
                 <div class="card card-green">
-                    <div class="card-icon">✅</div>
+                    <div class="card-icon card-icon-check" aria-hidden="true"></div>
                     <div class="card-content">
                         <h3>Shipped Orders</h3>
                         <p class="card-value">987</p>
@@ -111,7 +111,7 @@
                 </div>
 
                 <div class="card card-red">
-                    <div class="card-icon">⚠️</div>
+                    <div class="card-icon card-icon-alert" aria-hidden="true"></div>
                     <div class="card-content">
                         <h3>Exceptions</h3>
                         <p class="card-value">23</p>
@@ -176,6 +176,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

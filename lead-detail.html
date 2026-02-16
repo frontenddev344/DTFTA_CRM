@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DTFTA CRM - Orders / Jobs</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 </head>
 
@@ -26,23 +26,23 @@
             </div>
             <nav class="nav-menu">
                 <a href="index.html" class="nav-item">
-                    <span class="nav-icon">📊</span>
+                    <span class="nav-icon nav-icon-dashboard" aria-hidden="true"></span>
                     <span>Dashboard</span>
                 </a>
                 <a href="orders.html" class="nav-item active">
-                    <span class="nav-icon">📦</span>
+                    <span class="nav-icon nav-icon-orders" aria-hidden="true"></span>
                     <span>Orders / Jobs</span>
                 </a>
-                <a href="#" class="nav-item">
-                    <span class="nav-icon">🚚</span>
+                <a href="shipping.html" class="nav-item">
+                    <span class="nav-icon nav-icon-shipping" aria-hidden="true"></span>
                     <span>Shipping</span>
                 </a>
                 <a href="stores.html" class="nav-item">
-                    <span class="nav-icon">🏪</span>
+                    <span class="nav-icon nav-icon-stores" aria-hidden="true"></span>
                     <span>Stores</span>
                 </a>
-                <a href="#" class="nav-item">
-                    <span class="nav-icon">📈</span>
+                <a href="reports.html" class="nav-item">
+                    <span class="nav-icon nav-icon-reports" aria-hidden="true"></span>
                     <span>Reports</span>
                 </a>
             </nav>
@@ -71,8 +71,8 @@
                 <h1>Orders / Jobs Management</h1>
                 <div class="header-actions">
                     <button class="btn-primary" id="headerCreateBtn">Create Lead</button>
-                    <button class="btn-icon">🔔</button>
-                    <button class="btn-icon">⚙️</button>
+                    <button class="btn-icon btn-icon-bell" aria-label="Notifications"></button>
+                    <button class="btn-icon btn-icon-settings" aria-label="Settings"></button>
                 </div>
             </header>
             <div class="ld-page">
@@ -186,7 +186,7 @@
 
                     <div class="ld-content">
                         <div class="ld-timeline-item">
-                            <div class="ld-icon">⚙️</div>
+                            <div class="ld-icon" aria-hidden="true"></div>
                             <div>
                                 <b>Updated Stage: Won → New</b>
                                 <p>13 Feb 2026, 2:32 PM, By Example</p>
@@ -194,7 +194,7 @@
                         </div>
 
                         <div class="ld-timeline-item">
-                            <div class="ld-icon">⚙️</div>
+                            <div class="ld-icon" aria-hidden="true"></div>
                             <div>
                                 <b>Updated Stage: Negotiation → Won</b>
                                 <p>13 Feb 2026, 2:32 PM, By Example</p>
@@ -268,7 +268,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

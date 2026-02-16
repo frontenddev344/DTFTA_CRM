@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTFTA CRM - Reports & Analytics</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-header-content">
+                    <h2>DTFTA CRM</h2>
+                    <p class="subtitle">Ops Dashboard</p>
+                </div>
+                <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">×</button>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <span class="nav-icon nav-icon-dashboard" aria-hidden="true"></span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="orders.html" class="nav-item">
+                    <span class="nav-icon nav-icon-orders" aria-hidden="true"></span>
+                    <span>Orders / Jobs</span>
+                </a>
+                <a href="shipping.html" class="nav-item">
+                    <span class="nav-icon nav-icon-shipping" aria-hidden="true"></span>
+                    <span>Shipping</span>
+                </a>
+                <a href="stores.html" class="nav-item">
+                    <span class="nav-icon nav-icon-stores" aria-hidden="true"></span>
+                    <span>Stores</span>
+                </a>
+                <a href="reports.html" class="nav-item active">
+                    <span class="nav-icon nav-icon-reports" aria-hidden="true"></span>
+                    <span>Reports</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">A</div>
+                    <div class="user-details">
+                        <p class="user-name">Admin</p>
+                        <p class="user-role">Administrator</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <main class="main-content">
+            <header class="page-header">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <h1>Reports & Analytics</h1>
+                <div class="header-actions">
+                    <button class="btn-icon btn-icon-bell" aria-label="Notifications"></button>
+                    <button class="btn-icon btn-icon-settings" aria-label="Settings"></button>
+                </div>
+            </header>
+
+            <!-- Date range filter -->
+            <div class="reports-filters">
+                <div class="filter-group">
+                    <label>From</label>
+                    <input type="date" class="filter-select" id="dateFrom">
+                </div>
+                <div class="filter-group">
+                    <label>To</label>
+                    <input type="date" class="filter-select" id="dateTo">
+                </div>
+                <button class="btn-secondary" id="applyDateFilter">Apply</button>
+                <div style="flex:1"></div>
+                <button class="btn-primary" id="exportCsv">Export CSV</button>
+            </div>
+
+            <!-- Basic Reports (Phase 1) -->
+            <div class="reports-section">
+                <h2 class="reports-section-title"><span class="section-icon section-icon-chart" aria-hidden="true"></span>Basic Reports (Phase 1)</h2>
+                <div class="cards-grid">
+                    <div class="card card-blue">
+                        <div class="card-icon card-icon-store" aria-hidden="true"></div>
+                        <div class="card-content">
+                            <h3>Orders per store</h3>
+                            <p class="card-value">—</p>
+                            <p class="card-subtitle">Breakdown by connected store</p>
+                        </div>
+                    </div>
+                    <div class="card card-green">
+                        <div class="card-icon card-icon-check" aria-hidden="true"></div>
+                        <div class="card-content">
+                            <h3>Total fulfilled orders</h3>
+                            <p class="card-value">987</p>
+                            <p class="card-subtitle">Shipped in selected range</p>
+                        </div>
+                    </div>
+                    <div class="card card-orange">
+                        <div class="card-icon card-icon-clock" aria-hidden="true"></div>
+                        <div class="card-content">
+                            <h3>Pending vs shipped</h3>
+                            <p class="card-value">89 / 987</p>
+                            <p class="card-subtitle">Pending | Shipped</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orders per store table -->
+            <div class="chart-card" style="margin-top: 24px;">
+                <h3>Orders per store (date range)</h3>
+                <div class="table-container">
+                    <table class="jobs-table">
+                        <thead>
+                            <tr>
+                                <th>Store (domain)</th>
+                                <th>Total Orders</th>
+                                <th>Fulfilled</th>
+                                <th>Pending</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>store-abc.myshopify.com</td>
+                                <td>456</td>
+                                <td>440</td>
+                                <td>16</td>
+                            </tr>
+                            <tr>
+                                <td>store-123.myshopify.com</td>
+                                <td>312</td>
+                                <td>298</td>
+                                <td>14</td>
+                            </tr>
+                            <tr>
+                                <td>store-xyz.myshopify.com</td>
+                                <td>219</td>
+                                <td>249</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="assets/js/script.js"></script>
+    <script>
+        document.getElementById('exportCsv').addEventListener('click', function() {
+            alert('CSV download would start here. Connect to backend for real export.');
+        });
+        document.getElementById('applyDateFilter').addEventListener('click', function() {
+            var from = document.getElementById('dateFrom').value;
+            var to = document.getElementById('dateTo').value;
+            if (from || to) alert('Filter applied for: ' + (from || 'start') + ' to ' + (to || 'today'));
+        });
+    </script>
+</body>
+</html>
