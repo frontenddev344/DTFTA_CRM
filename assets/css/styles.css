@@ -817,7 +817,6 @@ select.filter-select:focus {
     background-color: var(--bg-card);
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: var(--shadow-md);
     border: 1px solid var(--border-color);
     overflow-x: auto;
 }
