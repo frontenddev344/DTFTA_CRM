@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeCounters();
     initializeViewToggle();
     initializeLeadDragDrop();
+    initializeUserDropdown();
+    initializeNotificationDropdown();
 });
 
 // ============================================
@@ -892,3 +894,61 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// ============================================
+// User profile dropdown (header)
+// ============================================
+function initializeUserDropdown() {
+    const trigger = document.querySelector('.user-dropdown-trigger');
+    const menu = document.querySelector('.user-dropdown-menu');
+    if (!trigger || !menu) return;
+
+    trigger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeNotificationDropdown();
+        const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+        trigger.setAttribute('aria-expanded', !isOpen);
+        menu.hidden = isOpen;
+    });
+
+    document.addEventListener('click', function() {
+        trigger.setAttribute('aria-expanded', 'false');
+        menu.hidden = true;
+    });
+
+    menu.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+}
+
+// ============================================
+// Notification dropdown (header)
+// ============================================
+function closeNotificationDropdown() {
+    const trigger = document.querySelector('.notification-trigger');
+    const menu = document.querySelector('.notification-dropdown-menu');
+    if (trigger) trigger.setAttribute('aria-expanded', 'false');
+    if (menu) menu.hidden = true;
+}
+
+function initializeNotificationDropdown() {
+    const trigger = document.querySelector('.notification-trigger');
+    const menu = document.querySelector('.notification-dropdown-menu');
+    if (!trigger || !menu) return;
+
+    trigger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        document.querySelector('.user-dropdown-trigger')?.setAttribute('aria-expanded', 'false');
+        var userMenu = document.querySelector('.user-dropdown-menu'); if (userMenu) userMenu.hidden = true;
+        const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+        trigger.setAttribute('aria-expanded', !isOpen);
+        menu.hidden = isOpen;
+    });
+
+    document.addEventListener('click', function() {
+        closeNotificationDropdown();
+    });
+
+    menu.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+}

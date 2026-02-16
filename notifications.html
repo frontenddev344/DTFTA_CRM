@@ -62,8 +62,52 @@
                 <h1>Notifications</h1>
                 <div class="header-actions">
                     <button class="btn-secondary" id="markAllRead">Mark all as read</button>
-                    <a href="notifications.html" class="btn-icon btn-icon-bell" aria-label="Notifications"></a>
-                    <a href="settings.html" class="btn-icon btn-icon-settings" aria-label="Settings"></a>
+                    <div class="notification-dropdown">
+                    <button type="button" class="btn-icon btn-icon-bell notification-trigger" aria-label="Notifications" aria-expanded="false" aria-haspopup="true">
+                        <span class="notification-badge">2</span>
+                    </button>
+                    <div class="notification-dropdown-menu" hidden>
+                        <div class="notification-dropdown-header">
+                            <span>Notifications</span>
+                            <span class="notification-dropdown-count">2</span>
+                        </div>
+                        <div class="notification-dropdown-list">
+                            <a href="job-detail.html" class="notification-dropdown-item">
+                                <span class="notification-item-avatar">E</span>
+                                <span class="notification-item-text"><strong>Store ABC</strong> — New order #1234</span>
+                            </a>
+                            <a href="job-detail.html" class="notification-dropdown-item">
+                                <span class="notification-item-avatar">S</span>
+                                <span class="notification-item-text"><strong>Job #1230</strong> — Moved to production</span>
+                            </a>
+                            <a href="job-detail.html" class="notification-dropdown-item">
+                                <span class="notification-item-avatar">N</span>
+                                <span class="notification-item-text"><strong>Job #1225</strong> — Shipped</span>
+                            </a>
+                        </div>
+                        <a href="notifications.html" class="notification-dropdown-footer">View all notifications</a>
+                    </div>
+                </div>
+                    <div class="user-dropdown">
+                        <button class="user-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+                            <span class="user-avatar-sm">A</span>
+                            <span class="user-dropdown-info">
+                                <span class="user-dropdown-name">Admin</span>
+                                <span class="user-dropdown-plan">Administrator</span>
+                            </span>
+                            <span class="user-dropdown-chevron" aria-hidden="true"></span>
+                        </button>
+                        <div class="user-dropdown-menu" hidden>
+                            <a href="settings.html" class="user-dropdown-item">
+                                <span class="user-dropdown-icon user-dropdown-icon-profile" aria-hidden="true"></span>
+                                Profile
+                            </a>
+                            <button type="button" class="user-dropdown-item user-dropdown-item-logout">
+                                <span class="user-dropdown-icon user-dropdown-icon-logout" aria-hidden="true"></span>
+                                Log out
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </header>
 

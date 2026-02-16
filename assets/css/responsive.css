@@ -175,6 +175,10 @@
     .sidebar.active {
         transform: translateX(0);
     }
+    .notification-dropdown-menu {
+        right: auto;
+        left: 0;
+    }
     
     .main-content {
         margin-left: 0;
@@ -303,6 +307,7 @@
     .step {
         flex-shrink: 0;
     }
+    
 }
 
 /* ============================================
