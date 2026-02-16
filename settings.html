@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTFTA CRM - Settings</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-header-content">
+                    <h2>DTFTA CRM</h2>
+                    <p class="subtitle">Ops Dashboard</p>
+                </div>
+                <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">×</button>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <span class="nav-icon nav-icon-dashboard" aria-hidden="true"></span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="orders.html" class="nav-item">
+                    <span class="nav-icon nav-icon-orders" aria-hidden="true"></span>
+                    <span>Orders / Jobs</span>
+                </a>
+                <a href="shipping.html" class="nav-item">
+                    <span class="nav-icon nav-icon-shipping" aria-hidden="true"></span>
+                    <span>Shipping</span>
+                </a>
+                <a href="stores.html" class="nav-item">
+                    <span class="nav-icon nav-icon-stores" aria-hidden="true"></span>
+                    <span>Stores</span>
+                </a>
+                <a href="reports.html" class="nav-item">
+                    <span class="nav-icon nav-icon-reports" aria-hidden="true"></span>
+                    <span>Reports</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">A</div>
+                    <div class="user-details">
+                        <p class="user-name">Admin</p>
+                        <p class="user-role">Administrator</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <main class="main-content">
+            <header class="page-header">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <h1>Settings</h1>
+                <div class="header-actions">
+                    <a href="notifications.html" class="btn-icon btn-icon-bell" aria-label="Notifications"></a>
+                    <a href="settings.html" class="btn-icon btn-icon-settings" aria-label="Settings"></a>
+                </div>
+            </header>
+
+            <div class="settings-sections">
+                <section class="chart-card settings-card">
+                    <h3>Profile</h3>
+                    <div class="form-group">
+                        <label>Display name</label>
+                        <input type="text" class="filter-select" value="Admin" placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="filter-select" value="admin@dtfta.com" placeholder="Email">
+                    </div>
+                    <button class="btn-secondary">Update profile</button>
+                </section>
+
+                <section class="chart-card settings-card">
+                    <h3>Notifications</h3>
+                    <div class="settings-toggle">
+                        <span>Email notifications</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="settings-toggle">
+                        <span>Order updates</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="settings-toggle">
+                        <span>Artwork & exceptions</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="settings-toggle">
+                        <span>Shipping & tracking</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </section>
+
+                <section class="chart-card settings-card">
+                    <h3>General</h3>
+                    <div class="form-group">
+                        <label>Time zone</label>
+                        <select class="filter-select">
+                            <option>(UTC-05:00) Eastern Time</option>
+                            <option>(UTC-08:00) Pacific Time</option>
+                            <option>(UTC+00:00) GMT</option>
+                            <option>(UTC+05:30) India Standard Time</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Date format</label>
+                        <select class="filter-select">
+                            <option>DD-MM-YYYY</option>
+                            <option>MM-DD-YYYY</option>
+                            <option>YYYY-MM-DD</option>
+                        </select>
+                    </div>
+                </section>
+
+                <section class="chart-card settings-card">
+                    <h3>Integrations</h3>
+                    <p class="settings-desc">Manage connected apps and Shopify stores from the Stores page.</p>
+                    <a href="stores.html" class="btn-secondary">Go to Stores</a>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

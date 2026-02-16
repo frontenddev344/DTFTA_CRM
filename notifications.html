@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTFTA CRM - Notifications</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-header-content">
+                    <h2>DTFTA CRM</h2>
+                    <p class="subtitle">Ops Dashboard</p>
+                </div>
+                <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">×</button>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <span class="nav-icon nav-icon-dashboard" aria-hidden="true"></span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="orders.html" class="nav-item">
+                    <span class="nav-icon nav-icon-orders" aria-hidden="true"></span>
+                    <span>Orders / Jobs</span>
+                </a>
+                <a href="shipping.html" class="nav-item">
+                    <span class="nav-icon nav-icon-shipping" aria-hidden="true"></span>
+                    <span>Shipping</span>
+                </a>
+                <a href="stores.html" class="nav-item">
+                    <span class="nav-icon nav-icon-stores" aria-hidden="true"></span>
+                    <span>Stores</span>
+                </a>
+                <a href="reports.html" class="nav-item">
+                    <span class="nav-icon nav-icon-reports" aria-hidden="true"></span>
+                    <span>Reports</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">A</div>
+                    <div class="user-details">
+                        <p class="user-name">Admin</p>
+                        <p class="user-role">Administrator</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <main class="main-content">
+            <header class="page-header">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <h1>Notifications</h1>
+                <div class="header-actions">
+                    <button class="btn-secondary" id="markAllRead">Mark all as read</button>
+                    <a href="notifications.html" class="btn-icon btn-icon-bell" aria-label="Notifications"></a>
+                    <a href="settings.html" class="btn-icon btn-icon-settings" aria-label="Settings"></a>
+                </div>
+            </header>
+
+            <div class="notifications-toolbar">
+                <div class="filter-group">
+                    <label>Filter</label>
+                    <select class="filter-select">
+                        <option value="">All</option>
+                        <option value="orders">Orders</option>
+                        <option value="shipping">Shipping</option>
+                        <option value="stores">Stores</option>
+                        <option value="system">System</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="notifications-list">
+                <div class="notification-item unread">
+                    <div class="notification-icon status-new">N</div>
+                    <div class="notification-content">
+                        <p class="notification-title">New order received</p>
+                        <p class="notification-text">Job #1234 from Store ABC — 3 items</p>
+                        <span class="notification-time">2 minutes ago</span>
+                    </div>
+                </div>
+                <div class="notification-item unread">
+                    <div class="notification-icon status-production">P</div>
+                    <div class="notification-content">
+                        <p class="notification-title">Moved to production</p>
+                        <p class="notification-text">Job #1230 is now in production</p>
+                        <span class="notification-time">15 minutes ago</span>
+                    </div>
+                </div>
+                <div class="notification-item">
+                    <div class="notification-icon status-shipped">S</div>
+                    <div class="notification-content">
+                        <p class="notification-title">Order shipped</p>
+                        <p class="notification-text">Job #1225 shipped — Tracking: 1Z999AA10123456784</p>
+                        <span class="notification-time">1 hour ago</span>
+                    </div>
+                </div>
+                <div class="notification-item">
+                    <div class="notification-icon status-exception">E</div>
+                    <div class="notification-content">
+                        <p class="notification-title">Artwork needed</p>
+                        <p class="notification-text">Job #1220 is waiting for artwork upload</p>
+                        <span class="notification-time">2 hours ago</span>
+                    </div>
+                </div>
+                <div class="notification-item">
+                    <div class="notification-icon status-shipped">S</div>
+                    <div class="notification-content">
+                        <p class="notification-title">Store connected</p>
+                        <p class="notification-text">store-123.myshopify.com is now connected</p>
+                        <span class="notification-time">Yesterday</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
